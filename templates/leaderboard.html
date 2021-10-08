@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Total Shares Value</th>
+                <th>Total Cash</th>
+                <th>Total of All Holdings</th>
+            </tr>
+        </thead>
+        <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+            {% for rank in leaderboards %}
+            <tr>
+                <td>{{ rank["username"] }}</td>
+                <td>{{ rank["username"] }}</td>
+                <td>{{ rank["total_shares"] }}</td>
+                <td>{{ rank["total_cash"] }}</td>
+                <td>{{ rank["total"] }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+{% endblock %}
