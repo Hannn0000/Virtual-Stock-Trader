@@ -37,7 +37,7 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL(os.getenv("DATABASE_URL"))
 
-Make sure API key is set
+# Make sure API key is set
 if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
 
