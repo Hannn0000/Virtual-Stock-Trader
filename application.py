@@ -52,7 +52,7 @@ def index():
     TOTAL = 0
     for row in rows:
         stock = lookup(row["symbol"])
-        portfolio.append({"symbol": stock["symbol"], "name": stock["name"], "shares": row["shares"],
+        portfolio.append({"symbol": stock["symbol"], "name": stock["name"], "shares": int(row["shares"]),
                           "price": usd(stock["price"]), "total": usd(row["shares"] * stock["price"])})
         TOTAL += row["shares"] * stock["price"]
     rows = db.execute("SELECT cash FROM users WHERE id=?", session["user_id"])
