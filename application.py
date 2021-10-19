@@ -30,13 +30,10 @@ app.jinja_env.filters["usd"] = usd
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_FILE_DIR"] = mkdtemp()
-# app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "null"
 Session(app)
 
-app.config['SESSION_PERMANENT'] = True
-# app.config['SESSION_TYPE'] = 'filesystem'
-# app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=5)
 
 # Configure CS50 Library to use SQLite database
 db = SQL(os.getenv("DATABASE_URL"))
